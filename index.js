@@ -11,7 +11,7 @@ if (!city) {
 
 async function getWeather(city) {
   return new Promise((resolve, reject) => {
-    const url = https://wttr.in/${encodeURIComponent(city)}?format=j1;
+    const url = `https://wttr.in/${encodeURIComponent(city)}?format=j1`;
 
     https.get(url, (res) => {
       let data = '';
@@ -36,7 +36,7 @@ async function getWeather(city) {
     const tempC = current.temp_C;
     const desc = current.weatherDesc[0].value;
 
-    console.log(Weather in ${city}: ${tempC}°C, ${desc});
+    console.log(`Weather in ${city}: ${tempC}°C, ${desc}`);
   } catch (err) {
     console.error('Error fetching weather:', err.message);
   }
